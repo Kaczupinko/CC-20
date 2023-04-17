@@ -18,6 +18,15 @@ function restoreState() {
     }
 }
 
+function resetState() {
+    currentTaskIndex = 0;
+    score = 0;
+    updateScoreDisplay();
+    loadTask(currentTaskIndex);
+    localStorage.removeItem("codeBlocksGameState");
+}
+
+
 function updateScoreDisplay() {
     const scoreDisplay = document.getElementById("score-display");
     scoreDisplay.textContent = `Wynik: ${score.toFixed(1)}`;
@@ -34,9 +43,12 @@ function loadTask(index) {
     task.blocks.forEach((block) => {
         const blockElement = document.createElement("div");
         blockElement.classList.add("code-block");
-        blockElement.textContent = block.content;
+        blockElement.innerHTML = block.content.replace(/\n/g, "<br>");
         blockElement.setAttribute("draggable", "true");
         blockElement.dataset.id = block.id;
+        if (block.dataIndent) {
+            blockElement.style.marginLeft = block.dataIndent + "ch";
+        }
 
         blockElement.addEventListener("dragstart", (e) => {
             e.dataTransfer.setData("text/plain", blockElement.dataset.id);
@@ -45,6 +57,7 @@ function loadTask(index) {
         blocksContainer.appendChild(blockElement);
     });
 }
+
 
 const blocksContainer = document.querySelector(".blocks-container");
 const dropzone = document.querySelector(".dropzone");
@@ -62,6 +75,14 @@ resetButton.addEventListener("click", () => {
     dropzone.innerHTML = "";
     loadTask(currentTaskIndex);
 });
+
+const resetButtonAll = document.getElementById("resetall-btn");
+resetButtonAll.addEventListener("click", () => {
+    if (confirm("Czy na pewno chcesz zresetować stan gry?")) {
+        resetState();
+    }
+});
+
 
 checkButton.addEventListener("click", () => {
     const droppedBlocks = Array.from(dropzone.children);
