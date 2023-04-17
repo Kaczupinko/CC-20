@@ -141,5 +141,13 @@ dropzone.addEventListener("drop", (e) => {
     dropzone.appendChild(blockElement);
 });
 
+function shuffleBlocks() {
+    const blocks = Array.from(blocksContainer.children);
+    blocks.sort(() => Math.random() - 0.5);
+    blocks.forEach((block) => blocksContainer.appendChild(block));
+}
+
+shuffleBlocks();
+
 
 
