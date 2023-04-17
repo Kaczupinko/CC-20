@@ -10,3 +10,11 @@ Jeśli ułożenie bloków jest poprawne, gracz otrzymuje punkt. W przeciwnym prz
 Po każdym poziomie gracz może przejść do następnego poziomu, naciskając przycisk Następny. Po ukończeniu ostatniego poziomu gra wyświetla gratulacje.  
   
 Stan gry jest zapisywany w pamięci lokalnej przeglądarki po każdym przejściu do następnego zadania lub sprawdzeniu kodu, aby gracz mógł wrócić do gry później i kontynuować rozgrywkę.  
+
+
+Do zrobienia: 
+- [x] 1. Poprawic drag and drop.
+- [ ] 2. Zrobic menu wyboru z kategoria pytan (anki lub syntax).
+- [ ] 3. Ustawic przycisk powrotu do poprzedniego zadania.
+- [ ] 4. Powiazac przycisk Resetuj z Resetuj pozycje elementow.
+- [ ] 5. Koniecznosc weryfikacji przed przejsciem do nastepnego zadania.
