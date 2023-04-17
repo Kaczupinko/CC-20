@@ -57,6 +57,12 @@ let score = 0;
 restoreState();
 loadTask(currentTaskIndex);
 
+const resetButton = document.getElementById("reset-btn");
+resetButton.addEventListener("click", () => {
+    dropzone.innerHTML = "";
+    loadTask(currentTaskIndex);
+});
+
 checkButton.addEventListener("click", () => {
     const droppedBlocks = Array.from(dropzone.children);
     const expectedBlocks = tasks[currentTaskIndex].blocks;
