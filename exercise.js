@@ -1,12 +1,14 @@
 export const tasks = [
     {
         id: 1,
-        description: "Zadanie 1: Dodanie nowego elementu <div> do strony.",
+        description: "Co to jest DOM?",
         blocks: [
-            { id: 1, content: "const newDiv = document.createElement('div');", dataIndent: 0 },
-            { id: 2, content: "newDiv.textContent = 'Nowy element';", dataIndent: 0 },
-            { id: 3, content: "document.body.appendChild(newDiv);", dataIndent: 0 },
-        ],
+            { id: 1, content: "DOM (Document Object Model) to struktura drzewiasta,", dataIndent: 0 },
+            { id: 2, content: "która reprezentuje strukturę dokumentu HTML lub XML.", dataIndent: 0 },
+            { id: 3, content: "Jest to interfejs programistyczny,", dataIndent: 0 },
+            { id: 4, content: "który umożliwia dostęp do elementów strony internetowej", dataIndent: 0 },
+            { id: 5, content: "i umożliwia ich modyfikację poprzez manipulowanie ich atrybutami i treścią.", dataIndent: 0 }
+        ]
     },
     {
         id: 2,
