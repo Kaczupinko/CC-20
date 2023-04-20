@@ -1,5 +1,5 @@
 import { tasks } from "./exercise.js";
-
+// rozdzielic
 function saveState() {
     const state = {
         currentTaskIndex,
